@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+    <!-- menu -->
+    <div id='cssmenu'>
+        <ul>
+           <li class='active'><a href="{% url 'voiceLabel'%}">Home</a></li>
+           <li><a href="{% url 'project_extra'%}">Detail</a></li>
+           <li><a href="#">Company</a></li>
+           <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+<hr/>
+<!-- https://bootsnipp.com/snippets/8G2Q -->
+<div class="container">
+    <div class="card text-center">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">OfferID</th>
+                <th scope="col">Date</th>
+                <th scope="col">Phone number</th>
+                <th scope="col">Language</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+
+        {% for data in firstOverview %}
+         <tbody>
+           <tr>
+               <td>{{data.id}}</td>
+                <td>{{data.start}}</td>
+                <td>{{data.caller_id}}</td>
+               <td>{{data.field_language.name}}</td>
+               <td class="text-center"><a class="btn btn-info btn-xs" href="{% url 'project_extra'%}{{data.id}}">View</a></td>
+           </tr>
+         </tbody>
+        {% endfor %}
+    </table>
+    </div>
+</div>
+
+{% endblock %}

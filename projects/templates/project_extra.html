@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+    <!-- menu -->
+<div id='cssmenu'>
+    <ul>
+        <li><a href="{% url 'voiceLabel'%}">Home</a></li>
+        <li class='active'><a href="{% url 'project_extra'%}">Detail</a></li>
+        <li><a href='#'>Company</a></li>
+        <li><a href='#'>Contact</a></li>
+    </ul>
+</div>
+
+</p>
+
+<!-- body stuff -->
+{{ request.get_full_path }}
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <div class="card">
+                <h5 class="card-header" align="center">General Information of seed - Rice</h5>
+                <div class="card-body">
+                    <label>Offer ID</label><input type='text' class='form-control' value="85" disabled>
+                    <label>Date</label><input type='text' class='form-control' disabled>
+                    <label>Phone Number</label><input type='text' class='form-control' disabled>
+                    <label>Language</label><input type='text' class='form-control' disabled>
+
+                    <!-- input table -->
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col">Audio path</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
